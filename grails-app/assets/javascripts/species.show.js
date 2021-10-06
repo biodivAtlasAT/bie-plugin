@@ -244,7 +244,11 @@ function loadDataProviders(){
             }
 
             if(datasetCount == 1){
+                if(window.getCookie('lang') != 'de_AT') {
                 $('.datasetLabel').html("dataset has");
+            } else {
+                    $('.datasetLabel').html("Datensammlung wurde");
+                }
             }
 
             $('.datasetCount').html(datasetCount);
@@ -691,7 +695,7 @@ function loadGalleryType(category, start) {
                 // add new 'load more images' button if required
                 var spinnerLink = $('img#gallerySpinner').attr('src');
                 var btn = '<div class="loadMore ' + category + '"><br><button class="btn btn-default" onCLick="loadGalleryType(\'' + category + '\','
-                    + (start + pageSize)  + ');">Load more images <img src="' + spinnerLink + '" class="hide"/></button></div>';
+                    + (start + pageSize)  + ');">' + jQuery.i18n.prop("load.more.images") + '<img src="' + spinnerLink + '" class="hide"/></button></div>';
                 $categoryTmpl.find('.taxon-gallery').append(btn);
             }
         }

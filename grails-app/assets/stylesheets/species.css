@@ -151,13 +151,21 @@ h5.json > a {
 
 #imageDialog.modal{
     min-height:80%;
-    margin: auto auto auto auto; /* place center */
+    /* min-height: 80%; */
+    width: inherit;
+    margin: auto;
+    /* margin: auto auto auto auto; place center */
 }
 #imageDialog .modal-dialog {
-    width: 90%;
+    width: 100%;
+    min-height: 750px;
+}
+#imageDialog .modal-content {
+    width: 100%;
+    min-height: 750px;
 }
 
-#imageDialog .modal-body{overflow-y: hidden;position:static;top:50px;bottom:50px;right:0px;left:0px;}
+#imageDialog .modal-body{overflow-y: hidden;position:static;top:50px;bottom:50px;right:0px;left:0px; min-height: 760px;}
 
 #imageDialog .modal-footer {position: absolute;bottom: 0;right: 0;left: 0;}
 

@@ -184,6 +184,12 @@ external:
       # {0} = page id
       service: https://eol.org/api/pages/1.0/{0,number,#0}.json?language={1}&images_per_page=0&videos_per_page=0&sounds_per_page=0&maps_per_page=0&texts_per_page=30&subjects=overview&licenses=all&details=true&references=true&vetted=0&cache_ttl=
   blacklist: file:./src/test/resources/test-blacklist.json
+  sanitise: true
+  # comma-delimited HTML elements
+  html:
+    allowedElements: h1,h2,h3,h4,h5,h6,div,a,br,i,b,u,small,strike,span,ul,li,p,sup,cite,ol,em,hr
+  # comma-delimited HTML attributes (attribute;pattern;element)
+    allowAttributes: href;a;^(http|https|mailto|#).+,class;span,id;span,src;img;^(http|https).+
 literature:
   bhl:
     url: https://biodiversitylibrary.org
@@ -200,5 +206,7 @@ literature:
     url: https://trove.nla.gov.au
     api: https://api.trove.nla.gov.au
     apikey: "<key value>"
+  zobodat:
+    url: https://www.zobodat.at/publikation_series.php
 show:
   tabs: overview,gallery,names,classification,records,literature,sequences,data-partners
