@@ -31,7 +31,7 @@
                                                  name="${tc?.taxonConcept?.nameString}"
                                                  taxonomicStatus="${tc?.taxonConcept?.taxonomicStatus}"
                                                  acceptedName="${tc?.taxonConcept?.acceptedConceptName}"/></g:set>
-<g:set var="commonNameDisplay" value="${(tc?.commonNames) ? tc?.commonNames?.get(0)?.nameString : ''}"/>
+<g:set var="commonNameDisplay" value="${(tc?.commonNames) ? tc?.commonNames?.nameString.unique().join(', ') : ''}"/>
 <g:set var="locale" value="${org.springframework.web.servlet.support.RequestContextUtils.getLocale(request)}"/>
 <g:set bean="authService" var="authService"></g:set>
 <g:set var="imageViewerType" value="${grailsApplication.config.imageViewerType?:'LEAFLET'}"></g:set>
